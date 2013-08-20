@@ -1,5 +1,13 @@
 def fibo_finder(n)
-  [0,1,1,2,3,5,8,13,21,34,55,89].fetch(n)
+  arr = [0, 1]
+	i = 0
+
+	until i == n
+		arr.push(arr[arr.length - 1] + arr[arr.length - 2])
+		i = i + 1
+	end
+
+	return arr[n]
 end
 
 assert_equal 0, fibo_finder(0)
